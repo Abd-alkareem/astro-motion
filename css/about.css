@@ -1,0 +1,208 @@
+.video-bg {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+}
+
+header {
+  z-index: 12000;
+  position: relative;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  flex-wrap: wrap;
+  position: relative;
+}
+header .container .name {
+  flex-basis: 35%;
+  color: white;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+@media (max-width: 991px) {
+  header .container .name {
+    flex-basis: 60%;
+  }
+}
+header .container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+}
+@media (max-width: 991px) {
+  header .container ul {
+    order: 2;
+    flex-direction: column;
+    width: 250px;
+    max-width: 250px;
+    gap: 30px;
+    background-color: rgba(8, 20, 29, 0.7019607843);
+    padding: 0;
+    border-radius: 10px;
+    position: absolute;
+    right: 10px;
+    top: 80px;
+    transition: 0.3s;
+    height: 0;
+    overflow: hidden;
+  }
+}
+@media (max-width: 991px) and (max-width: 577px) {
+  header .container ul {
+    top: 120px;
+  }
+}
+@media (max-width: 991px) {
+  header .container ul.active {
+    height: 375px;
+    padding: 20px 0;
+  }
+}
+header .container ul li a {
+  color: white;
+  transition: 0.3s;
+  font-size: 26px;
+  border-bottom: 2px solid white;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 140px;
+  display: block;
+  position: relative;
+}
+header .container ul li a::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12.5px;
+  transition: 0.3s;
+}
+header .container ul li a.active {
+  color: #99ff66;
+  border-color: #99ff66;
+}
+header .container ul li a.active::before {
+  background-color: #99ff66;
+}
+header .container ul li a:hover {
+  color: #99ff66;
+  border-color: #99ff66;
+}
+header .container ul li a:hover::before {
+  background-color: #99ff66;
+}
+header .container .minu-btn {
+  font-size: 30px;
+  color: white;
+  border: 1px solid white;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  transition: 0.3s;
+}
+header .container .minu-btn:hover, header .container .minu-btn.active {
+  border-color: #99ff66;
+  color: #99ff66;
+}
+@media (max-width: 991px) {
+  header .container .minu-btn {
+    display: block;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  position: relative;
+  font-family: cursive;
+}
+
+.about .container .holder {
+  padding: 40px 20px;
+  position: relative;
+  background-color: rgba(17, 17, 17, 0.53);
+  max-width: 800px;
+  margin: 70px 0;
+  margin-left: 20%;
+}
+@media (max-width: 991px) {
+  .about .container .holder {
+    margin-left: 0;
+  }
+}
+.about .container .holder::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  display: block;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: -40px;
+}
+.about .container .holder::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  display: block;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+}
+.about .container .holder h1 {
+  color: white;
+}
+.about .container .holder p {
+  color: white;
+  line-height: 1.7;
+  margin: 20px 0;
+}
+.about .container .holder p a {
+  color: #99ff66;
+}
+.about .container .holder .ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+footer .container p {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+footer .container p span {
+  color: #99ff66;
+}/*# sourceMappingURL=about.css.map */

@@ -1,0 +1,140 @@
+@import'../helpers/variables';
+@import'../helpers/mixins';
+
+header {
+
+    z-index: 12000;
+    position: relative;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        flex-wrap: wrap;
+        position: relative;
+
+        .name {
+            flex-basis: 35%;
+            color: white;
+            font-size: 32px;
+            text-transform: uppercase;
+
+            @include maxMid {
+                & {
+                    flex-basis: 60%;
+                }
+            }
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex: 1;
+
+            @include maxMid {
+                & {
+                    order: 2;
+                    flex-direction: column;
+                    width: 250px;
+                    max-width: 250px;
+                    gap: 30px;
+                    background-color: #08141db3;
+                    padding: 0;
+                    border-radius: 10px;
+                    position: absolute;
+                    right: 10px;
+                    top: 80px;
+                    transition: $transition-3;
+                    height: 0;
+                    overflow: hidden;
+                }
+
+                @include maxMob {
+                    & {
+                        top: 120px;
+                    }
+                }
+
+                &.active {
+                    height: 375px;
+                    padding: 20px 0;
+                }
+            }
+
+            li {
+                a {
+                    color: white;
+                    transition: $transition-3;
+                    font-size: 26px;
+                    border-bottom: 2px solid white;
+                    padding-bottom: 20px;
+                    text-align: center;
+                    width: 140px;
+                    display: block;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        width: 25px;
+                        height: 25px;
+                        background-color: white;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: -12.5px;
+                        transition: $transition-3;
+                    }
+
+                    &.active {
+                        color: $mainGreenColor;
+                        border-color: $mainGreenColor;
+
+                        &::before {
+                            background-color: $mainGreenColor;
+                        }
+
+                    }
+
+                    &:hover {
+                        color: $mainGreenColor;
+                        border-color: $mainGreenColor;
+
+                        &::before {
+                            background-color: $mainGreenColor;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .minu-btn {
+            font-size: 30px;
+            color: white;
+            border: 1px solid white;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            transition: $transition-3;
+
+            &:hover,
+            &.active {
+                border-color: $mainGreenColor;
+                color: $mainGreenColor;
+            }
+
+            @include maxMid {
+                & {
+                    display: block;
+
+                }
+            }
+
+        }
+    }
+}

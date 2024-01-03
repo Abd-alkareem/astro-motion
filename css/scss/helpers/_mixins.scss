@@ -1,0 +1,17 @@
+@mixin maxMob {
+    @media (max-width: 577px) {
+        @content;
+    }
+}
+
+@mixin maxSmall {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin maxMid {
+    @media (max-width: 991px) {
+        @content;
+    }
+}

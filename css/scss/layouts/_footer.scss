@@ -1,0 +1,16 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+footer {
+    .container {
+        p {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+
+            span {
+                color: $mainGreenColor;
+            }
+        }
+    }
+}

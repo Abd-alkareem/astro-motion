@@ -1,0 +1,160 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.contact {
+    .container {
+        h1 {
+            text-transform: uppercase;
+            color: white;
+            font-size: 28px;
+            margin-bottom: 0;
+            margin-top: 40px;
+            width: 100%;
+            padding-top: 20px;
+            border-top: 1px solid white;
+            position: relative;
+
+            &::before {
+                content: "";
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background-color: white;
+                position: absolute;
+                left: -1px;
+                top: -11px;
+            }
+
+            &::after {
+                content: "";
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background-color: white;
+                position: absolute;
+                right: -1px;
+                top: -11px;
+            }
+        }
+
+        .holder {
+            min-height: 80vh;
+            margin: 20px auto 50px;
+            display: flex;
+            gap: 40px;
+
+            @include maxSmall {
+                flex-direction: column;
+            }
+
+            .half:first-child {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 35px;
+                width: 50%;
+                position: relative;
+
+                @include maxSmall {
+                    width: 100%;
+                }
+
+                input:nth-child(1),
+                input:nth-child(2) {
+                    width: 100%;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    padding: 10px 5px;
+                    color: white;
+                    font-size: 20px;
+
+                }
+
+                input:nth-child(1)::placeholder,
+                input:nth-child(2)::placeholder,
+                textarea::placeholder {
+                    color: white;
+                    font-size: 20px;
+                }
+
+                input:nth-child(1):focus,
+                input:nth-child(2):focus,
+                textarea:focus {
+                    outline: none;
+                }
+
+                textarea {
+                    width: 100%;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    padding: 10px 5px;
+                    color: white;
+                    font-size: 20px;
+                    height: 100px;
+                }
+
+                input:nth-child(4) {
+                    padding: 10px 40px;
+                    align-self: flex-end;
+                    background-color: white;
+                    border: none;
+                    color: black;
+                    transition: $transition_3;
+
+                    &:hover {
+                        color: $mainGreenColor;
+                    }
+                }
+            }
+
+            .half:last-child {
+                width: 50%;
+
+                @include maxSmall {
+                    width: 100%;
+                }
+
+                p {
+                    margin: 20px 0;
+                    color: white;
+                    font-size: 20px;
+                    line-height: 1.7;
+                }
+
+                span {
+                    display: block;
+                    color: white;
+                    font-size: 18px;
+                    margin-bottom: 15px;
+
+                    a {
+                        color: white;
+                        transition: $transition_3;
+
+                        &:hover {
+                            color: $mainGreenColor;
+                        }
+                    }
+                }
+
+                .map {
+                    width: 100%;
+                    height: 250px;
+                    border-radius: 20px;
+                    background-color: gainsboro;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    i {
+                        color: black;
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
